@@ -1,8 +1,9 @@
 {
-    "name": "Player.Runtime",
-    "rootNamespace": "Player.Runtime",
+    "name": "Lamp.Runtime",
+    "rootNamespace": "",
     "references": [
-        "GUID:6ef25569c48e7be46a3b0604cefeeca1"
+        "GUID:6ef25569c48e7be46a3b0604cefeeca1",
+        "GUID:32832dadf1eb2ca44aefbe43f701ef83"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
