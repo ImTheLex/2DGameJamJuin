@@ -6,9 +6,9 @@ namespace Tools
     public class ScoreConfig : ScriptableObject
     {
 
-        public int m_scoreValue;
+        public float m_scoreValue;
 
-        public void AddScore(int scoreValue)
+        public void AddScore(float scoreValue)
         {
             m_scoreValue += scoreValue;
         }

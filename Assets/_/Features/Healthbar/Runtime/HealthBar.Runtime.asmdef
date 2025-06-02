@@ -1,9 +1,8 @@
 {
-    "name": "Spawner.Runtime",
+    "name": "HealthBar.Runtime",
     "rootNamespace": "",
     "references": [
-        "GUID:6ef25569c48e7be46a3b0604cefeeca1",
-        "GUID:0fc44752d28f0194da5b9afcf5eeb14d",
+        "GUID:461d4f6207f5ccf49bb87cb72bac191e",
         "GUID:32832dadf1eb2ca44aefbe43f701ef83"
     ],
     "includePlatforms": [],

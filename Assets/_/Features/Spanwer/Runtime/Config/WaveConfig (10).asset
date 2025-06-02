@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da35d75ad0d5ed645b87321fa06939ca, type: 3}
-  m_Name: PhantomConfig
+  m_Script: {fileID: 11500000, guid: 07203902e1783974b8f661e8e3564ec7, type: 3}
+  m_Name: WaveConfig (10)
   m_EditorClassIdentifier: 
-  m_health: 5
-  m_speed: 1
-  m_speedModifier: 0
-  m_phantomDamage: 20
-  m_scoreValueOnDeath: 1
+  m_startingWave: 0
+  m_endingWave: 0
+  m_repeatEveryCentury: 1
+  m_phantomAmount: 1
+  m_mediumPhantomAmount: 1
+  m_hardPhantomAmount: 1

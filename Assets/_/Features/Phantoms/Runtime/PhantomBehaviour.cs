@@ -1,21 +1,29 @@
 using System;
+using System.Collections.Generic;
 using Tools;
 using UnityEngine;
 
 public class PhantomBehaviour : MonoBehaviour
 {
 
+    public enum PhantomType { Easy, Medium, Hard }
+    
     public int m_health;
     public PhantomConfig m_phantomConfig;
     public Transform m_player;
     private Rigidbody2D _phantomRb;
     private Vector2 _movement;
+    public PhantomType m_type;
+    
+    public List<PhantomBehaviour> m_livingPhantoms;
+    
+    
 
     public ScoreBehaviour m_scoreBehaviour;
 
     
     [Header("Movement Settings")]
-    public float m_speed = 10f;
+    public float m_speed = 1f;
     public float m_speedModifier = 1f;
     
     [Header("Movement Type")]
@@ -35,9 +43,6 @@ public class PhantomBehaviour : MonoBehaviour
     private void Awake()
     {
         _phantomRb = GetComponent<Rigidbody2D>();
-        /*
-        m_scoreBehaviour = m_score.GetComponent<ScoreBehaviour>();
-    */
     }
 
     void Start()
@@ -45,6 +50,26 @@ public class PhantomBehaviour : MonoBehaviour
         m_health = m_phantomConfig.m_health;
     }
     
+
+    public void Configure(PhantomType type)
+    {
+        m_type = type;
+        switch (type)
+        {
+            case PhantomType.Easy:
+                m_speed = 2f;
+                m_health = 50;
+                break;
+            case PhantomType.Medium:
+                m_speed = 3.5f;
+                m_health = 100;
+                break;
+            case PhantomType.Hard:
+                m_speed = 5f;
+                m_health = 200;
+                break;
+        }
+    }
 
     
     private void Move()
@@ -96,7 +121,8 @@ public class PhantomBehaviour : MonoBehaviour
         if (m_health <= 0)
         {
             gameObject.SetActive(false);
-            
+            m_scoreBehaviour.m_scoreConfig.AddScore(m_phantomConfig.m_scoreValueOnDeath);
+
         }
     }
     private void MoveWithAddForce(Vector2 direction)
@@ -142,5 +168,25 @@ public class PhantomBehaviour : MonoBehaviour
     {
         Move();
     }
+
+    private void OnDisable()
+    {
+        OnPhantomDeath(this);
+    }
+
+    public void OnPhantomDeath(PhantomBehaviour pb)
+    {
+        if (m_livingPhantoms.Contains(pb))
+        {
+            m_livingPhantoms.Remove(pb);
+        }
+    }
     
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+           gameObject.SetActive(false);
+        }
+    }
 }
