@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26c28de84182e74cb2be97bc7b8acf3, type: 3}
   m_Name: LampConfig
   m_EditorClassIdentifier: 
-  m_damage: 1
+  m_damage: 2
