@@ -11,7 +11,7 @@ public class PhantomBehaviour : MonoBehaviour
     private Rigidbody2D _phantomRb;
     private Vector2 _movement;
 
-    private ScoreBehaviour m_scoreBehaviour;
+    public ScoreBehaviour m_scoreBehaviour;
 
     
     [Header("Movement Settings")]

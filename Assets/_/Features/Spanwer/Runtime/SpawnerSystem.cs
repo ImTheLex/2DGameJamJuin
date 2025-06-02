@@ -33,7 +33,12 @@ public class SpawnerSystem : MonoBehaviour
         {
             Transform spawnPoint = m_spawnPoints[Random.Range(0, m_spawnPoints.Count)];
             GameObject go = Instantiate(m_prefabs[0], new Vector3(spawnPoint.transform.position.x,spawnPoint.transform.position.y), Quaternion.identity, transform);
-            go.GetComponent<PhantomBehaviour>().m_player = m_player;
+            var _pb = go.GetComponent<PhantomBehaviour>();
+            _pb.m_player = m_player;
+            /*
+            _pb.m_scoreBehaviour;
+            */
+            
             go.SetActive(false);
             m_phantomPool.Add(go);
         }
