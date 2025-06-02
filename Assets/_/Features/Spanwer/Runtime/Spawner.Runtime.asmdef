@@ -1,6 +1,6 @@
 {
-    "name": "Player.Runtime",
-    "rootNamespace": "Player.Runtime",
+    "name": "Spawner.Runtime",
+    "rootNamespace": "",
     "references": [
         "GUID:6ef25569c48e7be46a3b0604cefeeca1"
     ],

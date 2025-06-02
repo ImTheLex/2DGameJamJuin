@@ -1,9 +1,7 @@
 {
-    "name": "Player.Runtime",
-    "rootNamespace": "Player.Runtime",
-    "references": [
-        "GUID:6ef25569c48e7be46a3b0604cefeeca1"
-    ],
+    "name": "Tools",
+    "rootNamespace": "Tools",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
