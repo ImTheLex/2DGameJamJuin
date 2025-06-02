@@ -11,6 +11,8 @@ public class PhantomBehaviour : MonoBehaviour
     private Rigidbody2D _phantomRb;
     private Vector2 _movement;
 
+    private ScoreBehaviour m_scoreBehaviour;
+
     
     [Header("Movement Settings")]
     public float m_speed = 10f;
@@ -33,17 +35,16 @@ public class PhantomBehaviour : MonoBehaviour
     private void Awake()
     {
         _phantomRb = GetComponent<Rigidbody2D>();
+        /*
+        m_scoreBehaviour = m_score.GetComponent<ScoreBehaviour>();
+    */
     }
 
     void Start()
     {
         m_health = m_phantomConfig.m_health;
     }
-
-    private void OnEnable()
-    {
     
-    }
 
     
     private void Move()
@@ -95,6 +96,7 @@ public class PhantomBehaviour : MonoBehaviour
         if (m_health <= 0)
         {
             gameObject.SetActive(false);
+            
         }
     }
     private void MoveWithAddForce(Vector2 direction)
