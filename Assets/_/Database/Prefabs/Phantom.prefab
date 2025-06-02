@@ -156,7 +156,7 @@ MonoBehaviour:
   m_health: 0
   m_phantomConfig: {fileID: 11400000, guid: 6b4a1b14b0ffda64bb3bb557a818ade2, type: 2}
   m_player: {fileID: 0}
-  m_speed: 1
+  m_speed: 2
   m_speedModifier: 1
   movementType: 1
   stopDistance: 0.5
