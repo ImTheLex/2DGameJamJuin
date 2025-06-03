@@ -1,0 +1,165 @@
+{
+"skeleton": {
+	"hash": "/3ZMfmMp3AA",
+	"spine": "4.2.43",
+	"x": -159,
+	"y": -5.75,
+	"width": 315,
+	"height": 484.88,
+	"images": "../images/",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root" },
+	{
+		"name": "left",
+		"parent": "root",
+		"length": 159.31,
+		"rotation": 89.75,
+		"x": -51.95,
+		"y": 6.1,
+		"color": "ffde00ff"
+	},
+	{
+		"name": "right",
+		"parent": "root",
+		"length": 162.13,
+		"rotation": 88.77,
+		"x": 41.96,
+		"y": 0.54,
+		"color": "7900ffff"
+	},
+	{
+		"name": "Body",
+		"parent": "root",
+		"length": 292.9,
+		"rotation": 89.18,
+		"x": -3.26,
+		"y": 120.19,
+		"color": "ff0000ff"
+	},
+	{
+		"name": "arm_left",
+		"parent": "Body",
+		"length": 155.07,
+		"rotation": 115.9,
+		"x": 128.94,
+		"y": 30.57,
+		"color": "ff0000ff"
+	},
+	{
+		"name": "arm_right",
+		"parent": "Body",
+		"length": 154.17,
+		"rotation": -112.88,
+		"x": 132.97,
+		"y": -32.12,
+		"color": "ff0000ff"
+	}
+],
+"slots": [
+	{ "name": "bag", "bone": "Body", "attachment": "player/bag" },
+	{ "name": "leg_right", "bone": "right", "attachment": "player/leg/leg_right" },
+	{ "name": "leg_left", "bone": "left", "attachment": "player/leg/leg_left" },
+	{ "name": "Calque 13 copie", "bone": "root", "attachment": "player/Calque 13 copie" },
+	{ "name": "arm_left", "bone": "arm_left" },
+	{ "name": "arm_left copie", "bone": "arm_right" },
+	{ "name": "Calque 13 copie2", "bone": "Body", "attachment": "Calque 13 copie" },
+	{ "name": "body", "bone": "Body", "attachment": "player/body" },
+	{ "name": "glasses", "bone": "Body", "attachment": "player/glasses" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"arm_left": {
+				"arm/arm_left": { "x": 116.77, "y": -18.53, "rotation": 154.86, "width": 110, "height": 118 }
+			},
+			"arm_left copie": {
+				"arm/arm_left copie": { "x": 118.9, "y": 13.18, "rotation": 23.7, "width": 112, "height": 108 }
+			},
+			"bag": {
+				"bag": { "x": 82.21, "y": -0.84, "rotation": -89.18, "width": 257, "height": 216 },
+				"player/bag": { "x": 82.58, "y": -0.83, "rotation": -89.18, "width": 257, "height": 216 }
+			},
+			"body": {
+				"body": { "x": 174.5, "y": 0.22, "rotation": -89.18, "width": 302, "height": 366 },
+				"player/body": { "x": 175.57, "y": 0.25, "rotation": -89.04, "width": 302, "height": 366 }
+			},
+			"Calque 13 copie": {
+				"player/Calque 13 copie": { "x": -1, "y": 282.25, "width": 240, "height": 351 }
+			},
+			"Calque 13 copie2": {
+				"Calque 13 copie": { "x": 161.01, "y": 0.03, "rotation": -89.18, "width": 240, "height": 351 }
+			},
+			"glasses": {
+				"glasses": { "x": 246.77, "y": 2.83, "rotation": -89.18, "width": 315, "height": 94 },
+				"player/glasses": { "x": 246.81, "y": 1.76, "rotation": -89.18, "width": 315, "height": 94 }
+			},
+			"leg_left": {
+				"leg/leg_left": { "x": 85.16, "y": -19.35, "rotation": -89.75, "width": 105, "height": 195 },
+				"player/leg/leg_left": { "x": 86.23, "y": -19.33, "rotation": -89.75, "width": 105, "height": 195 }
+			},
+			"leg_right": {
+				"leg/leg_right": { "x": 90.56, "y": -18.6, "rotation": -88.77, "width": 105, "height": 195 },
+				"player/leg/leg_right": { "x": 91.63, "y": -18.58, "rotation": -88.77, "width": 105, "height": 195 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"arm_left": {
+				"attachment": [
+					{}
+				]
+			},
+			"arm_left copie": {
+				"attachment": [
+					{}
+				]
+			}
+		},
+		"bones": {
+			"Body": {
+				"translate": [
+					{
+						"curve": [ 0.133, 0, 0.367, 0, 0.133, 0, 0.367, -30.13 ]
+					},
+					{
+						"time": 0.5,
+						"y": -30.13,
+						"curve": [ 0.667, 0, 0.833, 0, 0.667, -30.13, 0.833, 0 ]
+					},
+					{ "time": 1 }
+				]
+			},
+			"left": {
+				"rotate": [
+					{},
+					{ "time": 0.5, "value": -14.02 },
+					{ "time": 1 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.5, "x": -20.44 },
+					{ "time": 1 }
+				]
+			},
+			"right": {
+				"rotate": [
+					{},
+					{ "time": 0.5, "value": 12.89 },
+					{ "time": 1 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.5, "x": 22.6 },
+					{ "time": 1 }
+				]
+			}
+		}
+	}
+}
+}
