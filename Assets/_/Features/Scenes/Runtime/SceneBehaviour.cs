@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 public class SceneBehaviour : MonoBehaviour
 {
     private Scene _previousScene;
-    public ScoreConfig m_scoreConfig;
+    [SerializeField]
+    private ScoreConfig m_scoreConfig;
     public void StartGame()
     {
+        Time.timeScale = 1;
         _previousScene = SceneManager.GetActiveScene();
         m_scoreConfig.ResetScore();
         SceneManager.LoadScene("Maingame_scene");
-        Time.timeScale = 1;
         
     }
 
