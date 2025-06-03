@@ -3,7 +3,8 @@
     "rootNamespace": "Phantom.Runtime",
     "references": [
         "GUID:32832dadf1eb2ca44aefbe43f701ef83",
-        "GUID:0fc44752d28f0194da5b9afcf5eeb14d"
+        "GUID:0fc44752d28f0194da5b9afcf5eeb14d",
+        "GUID:68765d262e2128e4ab49c983f3411946"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Spine.Unity;
 using Tools;
 using UnityEngine;
 
@@ -22,6 +23,15 @@ public class PhantomBehaviour : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     
     [Header("Phantom Sprites")]
+    private SkeletonMecanim _skeletonAnimation;
+
+    
+    private void ChangeSkin(string skinName)
+    {
+         _skeletonAnimation.initialSkinName = skinName;
+        _skeletonAnimation.Initialize(true);
+    }
+    
     public Sprite m_phantomSprite;
     public Sprite m_mediumPhantomSprite;
     public Sprite m_hardPhantomSprite;
@@ -51,7 +61,9 @@ public class PhantomBehaviour : MonoBehaviour
     private void Awake()
     {
         _phantomRb = GetComponent<Rigidbody2D>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        //_spriteRenderer = GetComponent<SpriteRenderer>();
+        _skeletonAnimation = GetComponent<SkeletonMecanim>();
+        
     }
 
     void Start()
@@ -71,28 +83,35 @@ public class PhantomBehaviour : MonoBehaviour
                 m_health = m_phantomConfig.m_basicHealth + (m_waveConfig.m_basicHealthIncrement * m_currentWave);
                 m_scoreValueOnDeath = m_phantomConfig.m_basicScoreValueOnDeath;
                 m_phantomDamage = m_phantomConfig.m_basicDamage;
-                _spriteRenderer.sprite = m_phantomSprite;
+                //_spriteRenderer.sprite = m_phantomSprite;
+                ChangeSkin("ghost1");
                 break;
             case PhantomType.Medium:
                 m_speed = (m_phantomConfig.m_mediumSpeed * m_phantomConfig.m_mediumSpeedModifier) + (m_waveConfig.m_mediumSpeedIncrement * m_currentWave);
                 m_health = m_phantomConfig.m_mediumHealth + (m_waveConfig.m_mediumHealthIncrement * m_currentWave);
                 m_scoreValueOnDeath = m_phantomConfig.m_mediumScoreValueOnDeath;
                 m_phantomDamage = m_phantomConfig.m_mediumPhantomDamage;
-                _spriteRenderer.sprite = m_mediumPhantomSprite;
+                //_spriteRenderer.sprite = m_mediumPhantomSprite;
+                ChangeSkin("ghost2");
+
                 break;
             case PhantomType.Hard:
                 m_speed = m_phantomConfig.m_hardSpeed * m_phantomConfig.m_hardSpeedModifier + (m_waveConfig.m_hardSpeedIncrement * m_currentWave);
                 m_health = m_phantomConfig.m_hardHealth  + (m_waveConfig.m_hardHealthIncrement * m_currentWave);
                 m_scoreValueOnDeath = m_phantomConfig.m_hardScoreValueOnDeath;
                 m_phantomDamage = m_phantomConfig.m_hardPhantomDamage;
-                _spriteRenderer.sprite = m_hardPhantomSprite;
+                //_spriteRenderer.sprite = m_hardPhantomSprite;
+                ChangeSkin("ghost3");
+
                 break;
             case PhantomType.Boss:
                 m_speed = m_phantomConfig.m_bossSpeed * m_phantomConfig.m_bossSpeedModifier + (m_waveConfig.m_bossSpeedIncrement * m_currentWave);
                 m_health = m_phantomConfig.m_bossHealth + (m_waveConfig.m_bossHealthIncrement * m_currentWave);
                 m_scoreValueOnDeath = m_phantomConfig.m_bossScoreValueOnDeath;
                 m_phantomDamage = m_phantomConfig.m_bossPhantomDamage;
-                _spriteRenderer.sprite = m_bossPhantomSprite;
+                //_spriteRenderer.sprite = m_bossPhantomSprite;
+                ChangeSkin("ghost4");
+
                 break;
         }
     }
