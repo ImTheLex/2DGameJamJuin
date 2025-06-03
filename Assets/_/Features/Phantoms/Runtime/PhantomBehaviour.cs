@@ -6,7 +6,7 @@ using UnityEngine;
 public class PhantomBehaviour : MonoBehaviour
 {
 
-    public enum PhantomType { Easy, Medium, Hard }
+    public enum PhantomType { Easy, Medium, Hard, Boss}
     
     public int m_health;
     public PhantomConfig m_phantomConfig;
@@ -67,6 +67,10 @@ public class PhantomBehaviour : MonoBehaviour
             case PhantomType.Hard:
                 m_speed = 5f;
                 m_health = 200;
+                break;
+            case PhantomType.Boss:
+                m_speed = 1f;
+                m_health = 400;
                 break;
         }
     }

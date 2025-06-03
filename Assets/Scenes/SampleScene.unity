@@ -966,16 +966,16 @@ MonoBehaviour:
   m_spawnPoints:
   - {fileID: 1662436425}
   - {fileID: 409114631}
-  phantomTypesToSpawn: 
-  m_phantomPool: []
-  m_livingPhantoms: []
   m_waveConfigs:
   - {fileID: 11400000, guid: 1e52c9bf08658b6489c631a8462a6cde, type: 2}
   - {fileID: 11400000, guid: 67f46c4d18c0db24288758a6b3704f84, type: 2}
   - {fileID: 11400000, guid: 9d0519faabf02c34ca881fa756627821, type: 2}
-  m_spawnInterval: 2
   m_maxUnitsPool: 30
+  m_phantomPool: []
+  m_livingPhantoms: []
+  phantomTypesToSpawn: 
   m_currentWave: 1
+  m_spawnInterval: 2
 --- !u!4 &1981061540
 Transform:
   m_ObjectHideFlags: 0
@@ -1131,10 +1131,6 @@ PrefabInstance:
     - target: {fileID: 2406534234643263995, guid: 1dc3ffb2cf6736343b47a128b5417fca, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8233041740981444690, guid: 1dc3ffb2cf6736343b47a128b5417fca, type: 3}
-      propertyPath: m_health
-      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

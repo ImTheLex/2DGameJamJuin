@@ -1,6 +1,7 @@
 using System;
 using Tools;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Player.Runtime
 {
@@ -32,6 +33,8 @@ namespace Player.Runtime
             {
                 Debug.Log("Game Over");
                 gameObject.SetActive(false);
+                Time.timeScale = 0;
+                SceneManager.LoadScene("Scoring_scene");
             }
         }
     }
