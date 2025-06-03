@@ -2,7 +2,6 @@ using System;
 using System.IO;
 using TMPro;
 using Tools;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class ScoreSaver : MonoBehaviour
