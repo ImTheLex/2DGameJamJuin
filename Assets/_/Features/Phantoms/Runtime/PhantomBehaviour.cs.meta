@@ -6,10 +6,10 @@ MonoImporter:
   defaultReferences:
   - m_phantomConfig: {instanceID: 0}
   - m_player: {instanceID: 0}
-  - m_phantomSprite: {instanceID: 0}
-  - m_mediumPhantomSprite: {instanceID: 0}
-  - m_hardPhantomSprite: {instanceID: 0}
-  - m_bossPhantomSprite: {instanceID: 0}
+  - m_phantomSprite: {fileID: 21300000, guid: ebbf5e40d96fc19478ef64b3d78b37c0, type: 3}
+  - m_mediumPhantomSprite: {fileID: 7696653011259857575, guid: d3ce900a34d3df34fa8380d0c6006daa, type: 3}
+  - m_hardPhantomSprite: {fileID: 21300000, guid: d5739e594f015db42803c1892d33a67f, type: 3}
+  - m_bossPhantomSprite: {fileID: 21300000, guid: 61b37bb8ed52a7048ab3029d0d8d7bca, type: 3}
   - m_scoreBehaviour: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
