@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 public class SceneBehaviour : MonoBehaviour
 {
     private Scene _previousScene;
-    public ScoreConfig m_scoreConfig;
+    [SerializeField]
+    private ScoreConfig m_scoreConfig;
     public void StartGame()
     {
         _previousScene = SceneManager.GetActiveScene();
