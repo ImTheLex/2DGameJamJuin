@@ -17,7 +17,14 @@ MonoBehaviour:
   m_spawnInterval: 5
   m_repeatEveryCentury: 1
   m_phantomAmount: 1
-  m_phantomHealthIncrement: 0
-  m_phantomHealthIncrementFrequency: 0
+  m_basicHealthIncrement: 0
+  m_basicSpeedIncrement: 0
   m_mediumPhantomAmount: 1
+  m_mediumHealthIncrement: 0
+  m_mediumSpeedIncrement: 0
   m_hardPhantomAmount: 1
+  m_hardHealthIncrement: 1
+  m_hardSpeedIncrement: 0
+  m_bossPhantomAmount: 1
+  m_bossHealthIncrement: 1
+  m_bossSpeedIncrement: 0
