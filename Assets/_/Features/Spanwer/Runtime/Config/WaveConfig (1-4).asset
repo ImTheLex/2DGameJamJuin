@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_startingWave: 1
   m_endingWave: 4
+  m_spawnInterval: 0.2
   m_repeatEveryCentury: 1
-  m_phantomAmount: 1
-  m_mediumPhantomAmount: 1
+  m_phantomAmount: 5
+  m_phantomHealthIncrement: 0
+  m_phantomHealthIncrementFrequency: 0
+  m_mediumPhantomAmount: 0
   m_hardPhantomAmount: 0

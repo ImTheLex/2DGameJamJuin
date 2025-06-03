@@ -7,7 +7,13 @@ namespace Tools
     {
 
         public float m_scoreValue;
+        public int m_currentWave;
 
+
+        public void SaveWaves(int waveCount)
+        {
+            m_currentWave = waveCount;
+        }
         public void AddScore(float scoreValue)
         {
             m_scoreValue += scoreValue;
