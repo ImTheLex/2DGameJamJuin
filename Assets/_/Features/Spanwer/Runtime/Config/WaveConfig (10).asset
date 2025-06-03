@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07203902e1783974b8f661e8e3564ec7, type: 3}
   m_Name: WaveConfig (10)
   m_EditorClassIdentifier: 
-  m_startingWave: 10
-  m_endingWave: 10
+  m_startingWave: 0
+  m_endingWave: 0
   m_spawnInterval: 1
   m_repeatEveryCentury: 1
   m_phantomAmount: 0
