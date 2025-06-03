@@ -16,8 +16,11 @@ public class PhantomBehaviour : MonoBehaviour
     public PhantomType m_type;
     
     public List<PhantomBehaviour> m_livingPhantoms;
-    
-    
+    private SpriteRenderer _spriteRenderer;
+    public Sprite m_phantomSprite;
+    public Sprite m_mediumPhantomSprite;
+    public Sprite m_hardPhantomSprite;
+    public Sprite m_bossPhantomSprite;
 
     public ScoreBehaviour m_scoreBehaviour;
 
@@ -43,6 +46,7 @@ public class PhantomBehaviour : MonoBehaviour
     private void Awake()
     {
         _phantomRb = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Start()
@@ -59,18 +63,22 @@ public class PhantomBehaviour : MonoBehaviour
             case PhantomType.Easy:
                 m_speed = 2f;
                 m_health = 50;
+                _spriteRenderer.sprite = m_phantomSprite;
                 break;
             case PhantomType.Medium:
                 m_speed = 3.5f;
                 m_health = 100;
+                _spriteRenderer.sprite = m_mediumPhantomSprite;
                 break;
             case PhantomType.Hard:
                 m_speed = 5f;
                 m_health = 200;
+                _spriteRenderer.sprite = m_hardPhantomSprite;
                 break;
             case PhantomType.Boss:
                 m_speed = 1f;
                 m_health = 400;
+                _spriteRenderer.sprite = m_bossPhantomSprite;
                 break;
         }
     }

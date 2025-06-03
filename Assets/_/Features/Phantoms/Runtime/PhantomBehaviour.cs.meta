@@ -1,2 +1,18 @@
 fileFormatVersion: 2
 guid: 60e991c4574c2e54abcbb893e169dd2d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_phantomConfig: {instanceID: 0}
+  - m_player: {instanceID: 0}
+  - m_phantomSprite: {instanceID: 0}
+  - m_mediumPhantomSprite: {instanceID: 0}
+  - m_hardPhantomSprite: {instanceID: 0}
+  - m_bossPhantomSprite: {instanceID: 0}
+  - m_scoreBehaviour: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
