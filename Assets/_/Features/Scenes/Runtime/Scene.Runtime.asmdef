@@ -1,3 +1,17 @@
 {
-	"name": "Scene.Runtime"
+    "name": "Scene.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0fc44752d28f0194da5b9afcf5eeb14d",
+        "GUID:32832dadf1eb2ca44aefbe43f701ef83"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
