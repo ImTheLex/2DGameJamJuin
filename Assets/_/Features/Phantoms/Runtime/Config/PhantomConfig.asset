@@ -18,7 +18,7 @@ MonoBehaviour:
   m_basicDamage: 5
   m_basicScoreValueOnDeath: 1
   m_mediumHealth: 10
-  m_mediumSpeed: 1
+  m_mediumSpeed: 1.5
   m_mediumSpeedModifier: 1
   m_mediumPhantomDamage: 10
   m_mediumScoreValueOnDeath: 2
@@ -26,9 +26,9 @@ MonoBehaviour:
   m_hardSpeed: 1
   m_hardSpeedModifier: 1
   m_hardPhantomDamage: 15
-  m_hardScoreValueOnDeath: 3
+  m_hardScoreValueOnDeath: 4
   m_bossHealth: 50
   m_bossSpeed: 1
   m_bossSpeedModifier: 1
   m_bossPhantomDamage: 20
-  m_bossScoreValueOnDeath: 5
+  m_bossScoreValueOnDeath: 20
