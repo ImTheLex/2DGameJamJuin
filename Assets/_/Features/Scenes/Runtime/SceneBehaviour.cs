@@ -8,6 +8,7 @@ public class SceneBehaviour : MonoBehaviour
     {
         _previousScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene("Maingame_scene");
+        Time.timeScale = 1;
         
     }
 

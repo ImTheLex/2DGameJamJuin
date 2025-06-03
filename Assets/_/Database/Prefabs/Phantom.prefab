@@ -156,6 +156,13 @@ MonoBehaviour:
   m_health: 0
   m_phantomConfig: {fileID: 11400000, guid: 6b4a1b14b0ffda64bb3bb557a818ade2, type: 2}
   m_player: {fileID: 0}
+  m_type: 0
+  m_livingPhantoms: []
+  m_phantomSprite: {fileID: -8496399968298113383, guid: d664fbe350f21ce48924dc59064a6fd9, type: 3}
+  m_mediumPhantomSprite: {fileID: -7690393027686545325, guid: c3fd7224b68250a4bb16fa0b92eb64d9, type: 3}
+  m_hardPhantomSprite: {fileID: 315349795352424782, guid: 61b37bb8ed52a7048ab3029d0d8d7bca, type: 3}
+  m_bossPhantomSprite: {fileID: -6060291878679204268, guid: d5739e594f015db42803c1892d33a67f, type: 3}
+  m_scoreBehaviour: {fileID: 0}
   m_speed: 2
   m_speedModifier: 1
   movementType: 1
