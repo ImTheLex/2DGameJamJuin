@@ -16,11 +16,15 @@ MonoBehaviour:
   m_endingWave: 10
   m_spawnInterval: 1
   m_repeatEveryCentury: 1
-  m_phantomAmount: 10
-  m_phantomHealthIncrement: 0
+  m_phantomAmount: 0
+  m_basicHealthIncrement: 0
+  m_basicSpeedIncrement: 0
   m_mediumPhantomAmount: 0
-  m_mediumPhantomHealthIncrement: 0
+  m_mediumHealthIncrement: 0
+  m_mediumSpeedIncrement: 0
   m_hardPhantomAmount: 0
-  m_hardPhantomHealthIncrement: 0
+  m_hardHealthIncrement: 0
+  m_hardSpeedIncrement: 0
   m_bossPhantomAmount: 1
-  m_bossPhantomHealthIncrement: 0
+  m_bossHealthIncrement: 0.25
+  m_bossSpeedIncrement: 0.1
