@@ -17,11 +17,11 @@ MonoBehaviour:
   m_spawnInterval: 0.6
   m_repeatEveryCentury: 1
   m_phantomAmount: 3
-  m_basicHealthIncrement: 0
-  m_basicSpeedIncrement: 0
+  m_basicHealthIncrement: 0.2
+  m_basicSpeedIncrement: 0.15
   m_mediumPhantomAmount: 2
   m_mediumHealthIncrement: 1
-  m_mediumSpeedIncrement: 0
+  m_mediumSpeedIncrement: 0.1
   m_hardPhantomAmount: 1
   m_hardHealthIncrement: 1
   m_hardSpeedIncrement: 0

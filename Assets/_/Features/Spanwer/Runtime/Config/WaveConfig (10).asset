@@ -26,5 +26,5 @@ MonoBehaviour:
   m_hardHealthIncrement: 1
   m_hardSpeedIncrement: 0
   m_bossPhantomAmount: 1
-  m_bossHealthIncrement: 1
-  m_bossSpeedIncrement: 0
+  m_bossHealthIncrement: 5
+  m_bossSpeedIncrement: 0.1

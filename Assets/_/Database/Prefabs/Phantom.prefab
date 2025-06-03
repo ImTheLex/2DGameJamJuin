@@ -154,20 +154,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_health: 0
+  m_scoreValueOnDeath: 0
+  m_phantomDamage: 0
+  m_currentWave: 0
   m_phantomConfig: {fileID: 11400000, guid: 6b4a1b14b0ffda64bb3bb557a818ade2, type: 2}
   m_player: {fileID: 0}
   m_type: 0
-  m_livingPhantoms: []
   m_phantomSprite: {fileID: 21300000, guid: ebbf5e40d96fc19478ef64b3d78b37c0, type: 3}
   m_mediumPhantomSprite: {fileID: 7696653011259857575, guid: d3ce900a34d3df34fa8380d0c6006daa, type: 3}
-  m_hardPhantomSprite: {fileID: 21300000, guid: d5739e594f015db42803c1892d33a67f, type: 3}
-  m_bossPhantomSprite: {fileID: 21300000, guid: 61b37bb8ed52a7048ab3029d0d8d7bca, type: 3}
-  m_scoreBehaviour: {fileID: 0}
-  m_speed: 2
-  m_speedModifier: 1
-  movementType: 1
+  m_hardPhantomSprite: {fileID: 21300000, guid: 00eaf10442bdf1d47b80622c88054be3, type: 3}
+  m_bossPhantomSprite: {fileID: 21300000, guid: 87e5f48bc04a9454abb6179f9cddd6db, type: 3}
   stopDistance: 0.5
   maxSpeed: 5
+  m_livingPhantoms: []
+  m_scoreBehaviour: {fileID: 0}
+  m_waveConfig: {fileID: 0}
 --- !u!50 &15182292787367781
 Rigidbody2D:
   serializedVersion: 5

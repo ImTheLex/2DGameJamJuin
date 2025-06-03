@@ -18,7 +18,7 @@ MonoBehaviour:
   m_repeatEveryCentury: 1
   m_phantomAmount: 5
   m_basicHealthIncrement: 1
-  m_basicSpeedIncrement: 1
+  m_basicSpeedIncrement: 0.15
   m_mediumPhantomAmount: 0
   m_mediumHealthIncrement: 0
   m_mediumSpeedIncrement: 0
