@@ -1,25 +1,32 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Tools;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 
 public class SpawnerSystem : MonoBehaviour
 {
-    
+
+    [Header("References")] 
+    public Transform m_player;
+    public ScoreBehaviour m_scoreBehaviour;
     public List<GameObject> m_prefabs;
     public List<Transform> m_spawnPoints;
-
-    public List<GameObject> m_phantomPool;
     
-    public Transform m_player;
     
+    [Header("Wave Settings")] public List<WaveConfig> m_waveConfigs;
     public float m_spawnInterval;
-    public int m_maxUnitsPerWave;
+    public int m_maxUnitsPool;
+
+    [Header("Debug")] 
+    public List<GameObject> m_phantomPool;
+    public List<PhantomBehaviour> m_livingPhantoms;
+    public List<PhantomBehaviour.PhantomType> phantomTypesToSpawn = new List<PhantomBehaviour.PhantomType>();
     public int m_currentWave;
-    private float m_radius;
-    private float m_distananceOfSpawn;
+    private bool m_isSpawning;
 
 
     private void Awake()
@@ -27,21 +34,54 @@ public class SpawnerSystem : MonoBehaviour
         InitializeSpawns();
     }
 
+    private WaveConfig GetWaveConfigForWave(int currentWave)
+    {
+        // 1. Priorité aux cas uniques
+        foreach (var configSet in m_waveConfigs)
+        {
+            if (!configSet.m_repeatEveryCentury &&
+                currentWave >= configSet.m_startingWave &&
+                currentWave <= configSet.m_endingWave)
+            {
+                return configSet;
+            }
+        }
+
+        // 2. Sinon on utilise les configs cycliques
+        int waveModulo = currentWave % 10;
+        foreach (var configSet in m_waveConfigs)
+        {
+            if (configSet.m_repeatEveryCentury &&
+                waveModulo >= configSet.m_startingWave &&
+                waveModulo <= configSet.m_endingWave)
+            {
+                return configSet;
+            }
+        }
+
+        Debug.LogWarning($"Aucune configuration trouvée pour la wave {currentWave}");
+        return null;
+    }
+
+
     private void InitializeSpawns()
     {
-        for (int i = 0; i < m_maxUnitsPerWave; i++)
+        for (int i = 0; i < m_maxUnitsPool; i++)
         {
             Transform spawnPoint = m_spawnPoints[Random.Range(0, m_spawnPoints.Count)];
-            GameObject go = Instantiate(m_prefabs[0], new Vector3(spawnPoint.transform.position.x,spawnPoint.transform.position.y), Quaternion.identity, transform);
+            GameObject go = Instantiate(m_prefabs[0],
+                new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y), Quaternion.identity,
+                transform);
             var _pb = go.GetComponent<PhantomBehaviour>();
             _pb.m_player = m_player;
-            /*
-            _pb.m_scoreBehaviour;
-            */
-            
+            _pb.m_livingPhantoms = m_livingPhantoms;
+            _pb.m_scoreBehaviour = m_scoreBehaviour;
+
+
             go.SetActive(false);
             m_phantomPool.Add(go);
         }
+
     }
 
     private void Start()
@@ -49,20 +89,63 @@ public class SpawnerSystem : MonoBehaviour
         StartCoroutine(SetPhantomActive());
     }
 
-    private IEnumerator SetPhantomActive()
+    private void Update()
     {
-        for (int i = 0; i < m_phantomPool.Count; i++)
+        if (!m_isSpawning && m_livingPhantoms.Count == 0)
         {
-            WaitForSeconds wait = new WaitForSeconds(m_spawnInterval);
-            
-            m_phantomPool[i].SetActive(true);
-            
-            yield return wait;
-
-
+            m_isSpawning = true;
+            m_currentWave++;    
+            PrepareWave();
+            StartCoroutine(SetPhantomActive());
         }
     }
-    
-    
+
+
+
+    private void PrepareWave()
+    {
+        
+        var config = GetWaveConfigForWave(m_currentWave);
+        if (config == null)
+        {
+            Debug.LogError($"Aucune config trouvée pour la wave {m_currentWave}, arrêt du spawn !");
+            return;
+        }
+        
+        phantomTypesToSpawn.AddRange(Enumerable.Repeat(PhantomBehaviour.PhantomType.Easy, config.m_phantomAmount));
+        phantomTypesToSpawn.AddRange(Enumerable.Repeat(PhantomBehaviour.PhantomType.Medium, config.m_mediumPhantomAmount));
+        phantomTypesToSpawn.AddRange(Enumerable.Repeat(PhantomBehaviour.PhantomType.Hard, config.m_hardPhantomAmount));
+
+        phantomTypesToSpawn = phantomTypesToSpawn.OrderBy(x => Random.value).ToList();
+    }
+
+    private IEnumerator SetPhantomActive()
+    {
+        WaitForSeconds wait = new WaitForSeconds(m_spawnInterval);
+
+        for (int j = 0; j < phantomTypesToSpawn.Count; j++)
+        {
+        
+            GameObject phantomGO = m_phantomPool.FirstOrDefault(p => !p.activeInHierarchy);
+            if (phantomGO == null)
+            {
+                Debug.LogWarning("Pas assez de phantoms dans le pool !");
+                continue;
+            }
+
+            PhantomBehaviour pb = phantomGO.GetComponent<PhantomBehaviour>();
+            Transform spawnPoint = m_spawnPoints[Random.Range(0, m_spawnPoints.Count)];
+
+            phantomGO.transform.position = spawnPoint.position;
+            pb.Configure(phantomTypesToSpawn[j]);
+            m_livingPhantoms.Add(pb);
+            phantomGO.SetActive(true);
+
+            yield return wait;
+        }
+
+        phantomTypesToSpawn.Clear();
+        m_isSpawning = false;
+    }
 
 }

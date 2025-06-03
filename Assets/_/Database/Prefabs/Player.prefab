@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6108386866081231834}
   - component: {fileID: 8233041740981444690}
   - component: {fileID: 9530173627325582}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f8647264f9de14a9772dc2058629e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_health: 0
+  m_health: 100
   m_playerConfig: {fileID: 11400000, guid: f5fb1fd651735094f9f1332d5ba15a06, type: 2}
 --- !u!60 &9530173627325582
 PolygonCollider2D:

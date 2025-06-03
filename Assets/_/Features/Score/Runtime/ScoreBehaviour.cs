@@ -19,4 +19,5 @@ public class ScoreBehaviour : MonoBehaviour
     {
         _text.SetText($"Score: {m_scoreConfig.m_scoreValue}");
     }
+
 }

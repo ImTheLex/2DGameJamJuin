@@ -6,6 +6,7 @@ namespace Player.Runtime
 {
     public class PlayerBehaviour : MonoBehaviour
     {
+        [HideInInspector]
         public float m_health;
         public PlayerConfig m_playerConfig;
         
