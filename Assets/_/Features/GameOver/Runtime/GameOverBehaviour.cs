@@ -1,14 +1,11 @@
-using System;
 using TMPro;
 using Tools;
 using UnityEngine;
 
-public class ScoreBehaviour : MonoBehaviour
+public class GameOverBehaviour : MonoBehaviour
 {
     private TextMeshProUGUI _text;
     public ScoreConfig m_scoreConfig;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
         _text = transform.GetComponent<TextMeshProUGUI>();
@@ -17,7 +14,7 @@ public class ScoreBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _text.SetText($"Score: {m_scoreConfig.m_scoreValue}");
+        _text.SetText($"GAME OVER <br>Votre score: {m_scoreConfig.m_scoreValue}<br> Vagues Survécue: {m_scoreConfig.m_currentWave}");
     }
 
 }

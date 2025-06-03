@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da35d75ad0d5ed645b87321fa06939ca, type: 3}
   m_Name: PhantomConfig
   m_EditorClassIdentifier: 
-  m_health: 100
-  m_speed: 0.2
+  m_health: 5
+  m_speed: 1
   m_speedModifier: 0
   m_phantomDamage: 20
+  m_scoreValueOnDeath: 1

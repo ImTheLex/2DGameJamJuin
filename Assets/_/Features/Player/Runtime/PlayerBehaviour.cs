@@ -1,11 +1,13 @@
 using System;
 using Tools;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Player.Runtime
 {
     public class PlayerBehaviour : MonoBehaviour
     {
+        [HideInInspector]
         public float m_health;
         public PlayerConfig m_playerConfig;
         
@@ -31,6 +33,8 @@ namespace Player.Runtime
             {
                 Debug.Log("Game Over");
                 gameObject.SetActive(false);
+                Time.timeScale = 0;
+                SceneManager.LoadScene("Scoring_scene");
             }
         }
     }

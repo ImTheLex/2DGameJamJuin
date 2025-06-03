@@ -1,10 +1,9 @@
 {
-    "name": "Spawner.Runtime",
+    "name": "GameOver.Runtime",
     "rootNamespace": "",
     "references": [
-        "GUID:6ef25569c48e7be46a3b0604cefeeca1",
-        "GUID:0fc44752d28f0194da5b9afcf5eeb14d",
-        "GUID:32832dadf1eb2ca44aefbe43f701ef83"
+        "GUID:32832dadf1eb2ca44aefbe43f701ef83",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

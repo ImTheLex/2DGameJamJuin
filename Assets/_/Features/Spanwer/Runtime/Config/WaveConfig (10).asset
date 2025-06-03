@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07203902e1783974b8f661e8e3564ec7, type: 3}
+  m_Name: WaveConfig (10)
+  m_EditorClassIdentifier: 
+  m_startingWave: 0
+  m_endingWave: 0
+  m_spawnInterval: 5
+  m_repeatEveryCentury: 1
+  m_phantomAmount: 1
+  m_phantomHealthIncrement: 0
+  m_phantomHealthIncrementFrequency: 0
+  m_mediumPhantomAmount: 1
+  m_hardPhantomAmount: 1

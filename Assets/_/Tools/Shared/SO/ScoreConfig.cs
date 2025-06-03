@@ -6,9 +6,15 @@ namespace Tools
     public class ScoreConfig : ScriptableObject
     {
 
-        public int m_scoreValue;
+        public float m_scoreValue;
+        public int m_currentWave;
 
-        public void AddScore(int scoreValue)
+
+        public void SaveWaves(int waveCount)
+        {
+            m_currentWave = waveCount;
+        }
+        public void AddScore(float scoreValue)
         {
             m_scoreValue += scoreValue;
         }
