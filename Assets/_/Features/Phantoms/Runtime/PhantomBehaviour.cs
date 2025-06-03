@@ -28,7 +28,7 @@ public class PhantomBehaviour : MonoBehaviour
     public Sprite m_bossPhantomSprite;
     
     [Header("Movement Type")]
-    private MovementType movementType = MovementType.AddForce;
+    private MovementType movementType = MovementType.Velocity;
     
     [Header("Optional Settings")]
     public float stopDistance = 0.5f; // Distance à laquelle s'arrêter

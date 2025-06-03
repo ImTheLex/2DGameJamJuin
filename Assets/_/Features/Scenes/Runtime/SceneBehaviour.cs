@@ -9,10 +9,10 @@ public class SceneBehaviour : MonoBehaviour
     private ScoreConfig m_scoreConfig;
     public void StartGame()
     {
+        Time.timeScale = 1;
         _previousScene = SceneManager.GetActiveScene();
         m_scoreConfig.ResetScore();
         SceneManager.LoadScene("Maingame_scene");
-        Time.timeScale = 1;
         
     }
 
