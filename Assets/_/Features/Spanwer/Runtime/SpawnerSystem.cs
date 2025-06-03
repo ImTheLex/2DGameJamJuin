@@ -17,7 +17,7 @@ public class SpawnerSystem : MonoBehaviour
     public List<Transform> m_spawnPoints;
     
     
-    [Header("Wave Settings")] 
+    [Header("Wave Settings"), SerializeField] 
     public List<WaveConfig> m_waveConfigs;
     public int m_maxUnitsPool;
 
@@ -110,16 +110,21 @@ public class SpawnerSystem : MonoBehaviour
     {
         
         m_currentWaveConfig = GetWaveConfigForWave(m_currentWave);
-        m_spawnInterval = m_currentWaveConfig.m_spawnInterval;
+        /*float reduction = Mathf.Floor(m_currentWave / m_currentWaveConfig.m_spawnIntervalWave) * m_currentWaveConfig.m_spawnIntervalReduction;
+        m_spawnInterval = Mathf.Max(0.01f, m_currentWaveConfig.m_spawnInterval - reduction);*/
+        var interval = m_currentWaveConfig.m_spawnInterval;
+        m_spawnInterval = interval;
         if (m_currentWaveConfig == null)
         {
             Debug.LogError($"Aucune config trouvée pour la wave {m_currentWave}, arrêt du spawn !");
             return;
         }
-        
+        /*var basicToSpawn = m_currentWaveConfig.m_phantomAmount + (m_currentWave/m_currentWaveConfig.m_extraBasicWaveFrequency);
+        var mediumToSpawn = m_currentWaveConfig.m_mediumPhantomAmount + (m_currentWave/m_currentWaveConfig.m_extraMediumWaveFrequency);
+        var hardToSpawn = m_currentWaveConfig.m_hardPhantomAmount + (m_currentWave/m_currentWaveConfig.m_extraHardWaveFrequency);*/
         phantomTypesToSpawn.AddRange(Enumerable.Repeat(PhantomBehaviour.PhantomType.Easy, m_currentWaveConfig.m_phantomAmount));
         phantomTypesToSpawn.AddRange(Enumerable.Repeat(PhantomBehaviour.PhantomType.Medium, m_currentWaveConfig.m_mediumPhantomAmount));
-        phantomTypesToSpawn.AddRange(Enumerable.Repeat(PhantomBehaviour.PhantomType.Hard, m_currentWaveConfig.m_hardPhantomAmount));
+        phantomTypesToSpawn.AddRange(Enumerable.Repeat(PhantomBehaviour.PhantomType.Hard,m_currentWaveConfig.m_hardPhantomAmount));
         phantomTypesToSpawn.AddRange(Enumerable.Repeat(PhantomBehaviour.PhantomType.Boss, m_currentWaveConfig.m_bossPhantomAmount));
 
         phantomTypesToSpawn = phantomTypesToSpawn.OrderBy(x => Random.value).ToList();
