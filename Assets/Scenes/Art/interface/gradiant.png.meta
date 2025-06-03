@@ -58,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -137,9 +137,9 @@ TextureImporter:
       name: gradiant_1
       rect:
         serializedVersion: 2
-        x: 89
+        x: 152
         y: 0
-        width: 311
+        width: 248
         height: 1456
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -160,9 +160,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 13
-        y: 613
-        width: 63
-        height: 90
+        y: 612
+        width: 122
+        height: 91
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: gradiant_3
       rect:
         serializedVersion: 2
-        x: 75
-        y: 613
-        width: 60
-        height: 90
+        x: 0
+        y: 42
+        width: 67
+        height: 82
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +203,10 @@ TextureImporter:
       name: gradiant_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 42
-        width: 67
-        height: 82
+        x: 69
+        y: 43
+        width: 74
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gradiant_0: -8364998488022477678
+      gradiant_1: 9014014321166106210
+      gradiant_2: -2869373953618799660
+      gradiant_3: 617795972893886714
+      gradiant_4: -5526009159315297351
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
