@@ -8,7 +8,11 @@ public class PhantomBehaviour : MonoBehaviour
 
     public enum PhantomType { Easy, Medium, Hard, Boss}
     
-    public int m_health;
+    public float m_health;
+    public float m_scoreValueOnDeath;
+    public int m_phantomDamage;
+    
+    public int m_currentWave;
     public PhantomConfig m_phantomConfig;
     public Transform m_player;
     private Rigidbody2D _phantomRb;
@@ -17,6 +21,8 @@ public class PhantomBehaviour : MonoBehaviour
     
     public List<PhantomBehaviour> m_livingPhantoms;
     private SpriteRenderer _spriteRenderer;
+    
+    [Header("Phantom Sprites")]
     public Sprite m_phantomSprite;
     public Sprite m_mediumPhantomSprite;
     public Sprite m_hardPhantomSprite;
@@ -24,6 +30,7 @@ public class PhantomBehaviour : MonoBehaviour
 
     public ScoreBehaviour m_scoreBehaviour;
 
+    public WaveConfig m_waveConfig;
     
     [Header("Movement Settings")]
     public float m_speed = 1f;
@@ -51,33 +58,42 @@ public class PhantomBehaviour : MonoBehaviour
 
     void Start()
     {
-        m_health = m_phantomConfig.m_health;
+        //m_health = m_phantomConfig.m_health;
     }
     
 
     public void Configure(PhantomType type)
     {
+        Debug.Log($"[CONFIGURE] Phantom Type: {type}, WaveConfig Null? {m_waveConfig == null}");
         m_type = type;
         switch (type)
         {
             case PhantomType.Easy:
-                m_speed = 2f;
-                m_health = 50;
+                m_speed = (m_phantomConfig.m_basicSpeed * m_phantomConfig.m_basicSpeedModifier) + (m_waveConfig.m_basicSpeedIncrement * m_currentWave);
+                m_health = m_phantomConfig.m_basicHealth + (m_waveConfig.m_basicHealthIncrement * m_currentWave);
+                m_scoreValueOnDeath = m_phantomConfig.m_basicScoreValueOnDeath;
+                m_phantomDamage = m_phantomConfig.m_basicDamage;
                 _spriteRenderer.sprite = m_phantomSprite;
                 break;
             case PhantomType.Medium:
-                m_speed = 3.5f;
-                m_health = 100;
+                m_speed = (m_phantomConfig.m_mediumSpeed * m_phantomConfig.m_mediumSpeedModifier) + (m_waveConfig.m_mediumSpeedIncrement * m_currentWave);
+                m_health = m_phantomConfig.m_mediumHealth + (m_waveConfig.m_mediumHealthIncrement * m_currentWave);
+                m_scoreValueOnDeath = m_phantomConfig.m_mediumScoreValueOnDeath;
+                m_phantomDamage = m_phantomConfig.m_mediumPhantomDamage;
                 _spriteRenderer.sprite = m_mediumPhantomSprite;
                 break;
             case PhantomType.Hard:
-                m_speed = 5f;
-                m_health = 200;
+                m_speed = m_phantomConfig.m_hardSpeed * m_phantomConfig.m_hardSpeedModifier + (m_waveConfig.m_hardSpeedIncrement * m_currentWave);
+                m_health = m_phantomConfig.m_hardHealth  + (m_waveConfig.m_hardHealthIncrement * m_currentWave);
+                m_scoreValueOnDeath = m_phantomConfig.m_hardScoreValueOnDeath;
+                m_phantomDamage = m_phantomConfig.m_hardPhantomDamage;
                 _spriteRenderer.sprite = m_hardPhantomSprite;
                 break;
             case PhantomType.Boss:
-                m_speed = 1f;
-                m_health = 400;
+                m_speed = m_phantomConfig.m_bossSpeed * m_phantomConfig.m_bossSpeedModifier + (m_waveConfig.m_bossSpeedIncrement * m_currentWave);
+                m_health = m_phantomConfig.m_bossHealth + (m_waveConfig.m_bossHealthIncrement * m_currentWave);
+                m_scoreValueOnDeath = m_phantomConfig.m_bossScoreValueOnDeath;
+                m_phantomDamage = m_phantomConfig.m_bossPhantomDamage;
                 _spriteRenderer.sprite = m_bossPhantomSprite;
                 break;
         }
@@ -133,15 +149,9 @@ public class PhantomBehaviour : MonoBehaviour
         if (m_health <= 0)
         {
             gameObject.SetActive(false);
-            m_scoreBehaviour.m_scoreConfig.AddScore(m_phantomConfig.m_scoreValueOnDeath);
+            m_scoreBehaviour.m_scoreConfig.AddScore(m_scoreValueOnDeath);
 
         }
-    }
-    private void MoveWithAddForce(Vector2 direction)
-    {
-        // SANS Time.deltaTime car AddForce gère déjà le temps
-        float force = m_speed * m_speedModifier;
-        _phantomRb.AddForce(direction * force, ForceMode2D.Force);
     }
 
     private void MoveWithVelocity(Vector2 direction)

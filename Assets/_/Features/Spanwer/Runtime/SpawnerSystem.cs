@@ -25,6 +25,7 @@ public class SpawnerSystem : MonoBehaviour
     public List<GameObject> m_phantomPool;
     public List<PhantomBehaviour> m_livingPhantoms;
     public List<PhantomBehaviour.PhantomType> phantomTypesToSpawn = new List<PhantomBehaviour.PhantomType>();
+    public WaveConfig m_currentWaveConfig;
     public int m_currentWave;
     public float m_spawnInterval;
     private bool m_isSpawning;
@@ -32,6 +33,7 @@ public class SpawnerSystem : MonoBehaviour
 
     private void Awake()
     {
+        //m_currentWaveConfig = GetWaveConfigForWave(m_currentWave);
         InitializeSpawns();
     }
 
@@ -107,18 +109,18 @@ public class SpawnerSystem : MonoBehaviour
     private void PrepareWave()
     {
         
-        var config = GetWaveConfigForWave(m_currentWave);
-        m_spawnInterval = config.m_spawnInterval;
-        if (config == null)
+        m_currentWaveConfig = GetWaveConfigForWave(m_currentWave);
+        m_spawnInterval = m_currentWaveConfig.m_spawnInterval;
+        if (m_currentWaveConfig == null)
         {
             Debug.LogError($"Aucune config trouvée pour la wave {m_currentWave}, arrêt du spawn !");
             return;
         }
         
-        phantomTypesToSpawn.AddRange(Enumerable.Repeat(PhantomBehaviour.PhantomType.Easy, config.m_phantomAmount));
-        phantomTypesToSpawn.AddRange(Enumerable.Repeat(PhantomBehaviour.PhantomType.Medium, config.m_mediumPhantomAmount));
-        phantomTypesToSpawn.AddRange(Enumerable.Repeat(PhantomBehaviour.PhantomType.Hard, config.m_hardPhantomAmount));
-        phantomTypesToSpawn.AddRange(Enumerable.Repeat(PhantomBehaviour.PhantomType.Boss, config.m_bossPhantomAmount));
+        phantomTypesToSpawn.AddRange(Enumerable.Repeat(PhantomBehaviour.PhantomType.Easy, m_currentWaveConfig.m_phantomAmount));
+        phantomTypesToSpawn.AddRange(Enumerable.Repeat(PhantomBehaviour.PhantomType.Medium, m_currentWaveConfig.m_mediumPhantomAmount));
+        phantomTypesToSpawn.AddRange(Enumerable.Repeat(PhantomBehaviour.PhantomType.Hard, m_currentWaveConfig.m_hardPhantomAmount));
+        phantomTypesToSpawn.AddRange(Enumerable.Repeat(PhantomBehaviour.PhantomType.Boss, m_currentWaveConfig.m_bossPhantomAmount));
 
         phantomTypesToSpawn = phantomTypesToSpawn.OrderBy(x => Random.value).ToList();
     }
@@ -141,10 +143,11 @@ public class SpawnerSystem : MonoBehaviour
             Transform spawnPoint = m_spawnPoints[Random.Range(0, m_spawnPoints.Count)];
 
             phantomGO.transform.position = spawnPoint.position;
+            pb.m_currentWave = m_currentWave;
+            pb.m_waveConfig = m_currentWaveConfig;
             pb.Configure(phantomTypesToSpawn[j]);
             m_livingPhantoms.Add(pb);
             phantomGO.SetActive(true);
-
             yield return wait;
         }
 
