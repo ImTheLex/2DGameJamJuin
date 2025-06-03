@@ -22,7 +22,7 @@ namespace Player.Runtime
 
             if (other.TryGetComponent<PhantomBehaviour>(out PhantomBehaviour _phantomBehaviour))
             {
-                TakeDamage(_phantomBehaviour.m_phantomConfig.m_phantomDamage);
+                TakeDamage(_phantomBehaviour.m_phantomDamage);
             }
         }
 
