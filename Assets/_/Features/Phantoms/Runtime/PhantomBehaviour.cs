@@ -19,7 +19,6 @@ public class PhantomBehaviour : MonoBehaviour
     private Vector2 _movement;
     public PhantomType m_type;
     
-    public List<PhantomBehaviour> m_livingPhantoms;
     private SpriteRenderer _spriteRenderer;
     
     [Header("Phantom Sprites")]
@@ -27,21 +26,20 @@ public class PhantomBehaviour : MonoBehaviour
     public Sprite m_mediumPhantomSprite;
     public Sprite m_hardPhantomSprite;
     public Sprite m_bossPhantomSprite;
-
-    public ScoreBehaviour m_scoreBehaviour;
-
-    public WaveConfig m_waveConfig;
-    
-    [Header("Movement Settings")]
-    public float m_speed = 1f;
-    public float m_speedModifier = 1f;
     
     [Header("Movement Type")]
-    public MovementType movementType = MovementType.AddForce;
+    private MovementType movementType = MovementType.Velocity;
     
     [Header("Optional Settings")]
     public float stopDistance = 0.5f; // Distance à laquelle s'arrêter
     public float maxSpeed = 5f; 
+    
+    [Header("Debug")]
+    public List<PhantomBehaviour> m_livingPhantoms;
+    public ScoreBehaviour m_scoreBehaviour;
+    public WaveConfig m_waveConfig;
+    private float m_speed;
+
     
     public enum MovementType
     {
@@ -157,21 +155,21 @@ public class PhantomBehaviour : MonoBehaviour
     private void MoveWithVelocity(Vector2 direction)
     {
         // Contrôle direct de la vélocité
-        float speed = m_speed * m_speedModifier;
+        float speed = m_speed;
         _phantomRb.linearVelocity = direction * speed;
     }
 
     private void MoveWithTransform(Vector2 direction)
     {
         // Déplacement direct (ignore la physique)
-        float speed = m_speed * m_speedModifier;
+        float speed = m_speed;
         transform.Translate(direction * speed * Time.deltaTime);
     }
 
     private void MoveWithAddForceImproved(Vector2 direction)
     {
         // AddForce avec limitation de vitesse maximale
-        float force = m_speed * m_speedModifier;
+        float force = m_speed;
         
         // Limiter la vitesse maximale
         if (_phantomRb.linearVelocity.magnitude < maxSpeed)

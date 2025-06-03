@@ -16,7 +16,7 @@ MonoBehaviour:
   m_endingWave: 4
   m_spawnInterval: 1
   m_repeatEveryCentury: 1
-  m_phantomAmount: 2
+  m_phantomAmount: 8
   m_basicHealthIncrement: 0
   m_basicSpeedIncrement: 0.1
   m_mediumPhantomAmount: 5

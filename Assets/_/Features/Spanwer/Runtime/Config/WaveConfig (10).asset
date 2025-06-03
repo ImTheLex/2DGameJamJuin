@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_startingWave: 0
   m_endingWave: 0
-  m_spawnInterval: 1
+  m_spawnInterval: 5
   m_repeatEveryCentury: 1
-  m_phantomAmount: 0
+  m_phantomAmount: 1
   m_basicHealthIncrement: 0
   m_basicSpeedIncrement: 0
-  m_mediumPhantomAmount: 0
+  m_mediumPhantomAmount: 1
   m_mediumHealthIncrement: 0
   m_mediumSpeedIncrement: 0
-  m_hardPhantomAmount: 0
-  m_hardHealthIncrement: 0
+  m_hardPhantomAmount: 1
+  m_hardHealthIncrement: 1
   m_hardSpeedIncrement: 0
   m_bossPhantomAmount: 1
-  m_bossHealthIncrement: 0.25
-  m_bossSpeedIncrement: 0.1
+  m_bossHealthIncrement: 1
+  m_bossSpeedIncrement: 0
