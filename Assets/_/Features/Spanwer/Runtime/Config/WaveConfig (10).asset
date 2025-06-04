@@ -15,13 +15,18 @@ MonoBehaviour:
   m_startingWave: 0
   m_endingWave: 0
   m_spawnInterval: 5
+  m_spawnIntervalReduction: 0.1
+  m_spawnIntervalWave: 0.01
   m_repeatEveryCentury: 1
-  m_phantomAmount: 1
+  m_extraBasicWaveFrequency: 1
+  m_phantomAmount: 10
   m_basicHealthIncrement: 0
   m_basicSpeedIncrement: 0
+  m_extraMediumWaveFrequency: 1
   m_mediumPhantomAmount: 1
   m_mediumHealthIncrement: 0
   m_mediumSpeedIncrement: 0
+  m_extraHardWaveFrequency: 1
   m_hardPhantomAmount: 1
   m_hardHealthIncrement: 1
   m_hardSpeedIncrement: 0
