@@ -8,6 +8,7 @@ public class LampBehaviour : MonoBehaviour
 {
     private PhantomBehaviour _phantomBehaviour;
     public LampConfig _lampConfig;
+    public ScoreConfig _scoreConfig;
     
     private void OnTriggerEnter2D(Collider2D other)
     {

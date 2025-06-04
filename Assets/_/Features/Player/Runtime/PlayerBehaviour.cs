@@ -10,11 +10,19 @@ namespace Player.Runtime
         [HideInInspector]
         public float m_health;
         public PlayerConfig m_playerConfig;
+        public ScoreConfig m_scoreConfig;
+        private float _scoreTresholdForHealing;
         
         private void Awake()
         {
             m_health = m_playerConfig.m_health;
+            _scoreTresholdForHealing = m_scoreConfig.m_scoreTresholdForHealing;
         
+        }
+
+        private void Update()
+        {
+            HealPlayer();
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -26,6 +34,14 @@ namespace Player.Runtime
             }
         }
 
+        private void HealPlayer()
+        {
+            if (m_scoreConfig.m_scoreValue >= _scoreTresholdForHealing)
+            {
+                _scoreTresholdForHealing += m_scoreConfig.m_scoreTresholdForHealing;
+                m_health += (m_scoreConfig.m_healingPercentage / m_playerConfig.m_maxHealth) * 100;
+            }
+        }
         private void TakeDamage(int damage)
         {
             m_health -= damage;
