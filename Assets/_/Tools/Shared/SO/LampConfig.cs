@@ -7,5 +7,7 @@ namespace Tools
     {
 
         public int m_damage;
+        public int m_lenght;
+        public int m_width;
     }
 }

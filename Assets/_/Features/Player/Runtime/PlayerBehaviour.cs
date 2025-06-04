@@ -7,7 +7,7 @@ namespace Player.Runtime
 {
     public class PlayerBehaviour : MonoBehaviour
     {
-        [HideInInspector]
+       [HideInInspector]
         public float m_health;
         public PlayerConfig m_playerConfig;
         public ScoreConfig m_scoreConfig;
@@ -39,7 +39,17 @@ namespace Player.Runtime
             if (m_scoreConfig.m_scoreValue >= _scoreTresholdForHealing)
             {
                 _scoreTresholdForHealing += m_scoreConfig.m_scoreTresholdForHealing;
-                m_health += (m_scoreConfig.m_healingPercentage / m_playerConfig.m_maxHealth) * 100;
+                var amount = (m_playerConfig.m_maxHealth / 100) * m_scoreConfig.m_healingPercentage;
+                    
+                
+                if (m_health + amount >= m_playerConfig.m_maxHealth)
+                {
+                    m_health = m_playerConfig.m_maxHealth;
+                }
+                else
+                {
+                    m_health += amount;
+                }
             }
         }
         private void TakeDamage(int damage)
