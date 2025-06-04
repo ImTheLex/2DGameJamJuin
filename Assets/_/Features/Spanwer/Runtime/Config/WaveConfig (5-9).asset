@@ -14,20 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_startingWave: 5
   m_endingWave: 9
-  m_spawnInterval: 0.6
+  m_spawnInterval: 0.3
   m_spawnIntervalReduction: 0.1
   m_spawnIntervalWave: 0.01
   m_repeatEveryCentury: 1
   m_extraBasicWaveFrequency: 1
-  m_phantomAmount: 25
+  m_phantomAmount: 60
   m_basicHealthIncrement: 0.2
   m_basicSpeedIncrement: 0.15
   m_extraMediumWaveFrequency: 1
-  m_mediumPhantomAmount: 5
+  m_mediumPhantomAmount: 8
   m_mediumHealthIncrement: 1
   m_mediumSpeedIncrement: 0.1
   m_extraHardWaveFrequency: 1
-  m_hardPhantomAmount: 1
+  m_hardPhantomAmount: 4
   m_hardHealthIncrement: 1
   m_hardSpeedIncrement: 0
   m_bossPhantomAmount: 0

@@ -17,17 +17,17 @@ MonoBehaviour:
   m_basicSpeedModifier: 1
   m_basicDamage: 5
   m_basicScoreValueOnDeath: 1
-  m_mediumHealth: 15
+  m_mediumHealth: 10
   m_mediumSpeed: 2.5
   m_mediumSpeedModifier: 1
   m_mediumPhantomDamage: 5
   m_mediumScoreValueOnDeath: 2
-  m_hardHealth: 30
+  m_hardHealth: 20
   m_hardSpeed: 2
   m_hardSpeedModifier: 1
   m_hardPhantomDamage: 5
   m_hardScoreValueOnDeath: 4
-  m_bossHealth: 60
+  m_bossHealth: 50
   m_bossSpeed: 1.3
   m_bossSpeedModifier: 1
   m_bossPhantomDamage: 10

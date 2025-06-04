@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_startingWave: 1
   m_endingWave: 2
-  m_spawnInterval: 1
+  m_spawnInterval: 0.5
   m_spawnIntervalReduction: 0.1
   m_spawnIntervalWave: 0.01
   m_repeatEveryCentury: 1

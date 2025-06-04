@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e42c997f5422684490169cbcbfcc5d6, type: 3}
   m_Name: ScoreConfig
   m_EditorClassIdentifier: 
-  m_scoreValue: 285
-  m_currentWave: 9
-  m_scoreTresholdForHealing: 200
-  m_healingPercentage: 10
+  m_scoreValue: 0
+  m_currentWave: 0
+  m_scoreTresholdForHealing: 1000
+  m_healingPercentage: 5
   m_scoreTresholdForDamage: 0

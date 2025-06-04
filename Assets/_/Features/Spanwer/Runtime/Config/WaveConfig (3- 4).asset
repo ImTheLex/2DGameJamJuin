@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_startingWave: 3
   m_endingWave: 4
-  m_spawnInterval: 1
+  m_spawnInterval: 0.4
   m_spawnIntervalReduction: 0.1
   m_spawnIntervalWave: 0.01
   m_repeatEveryCentury: 1
   m_extraBasicWaveFrequency: 1
-  m_phantomAmount: 20
+  m_phantomAmount: 30
   m_basicHealthIncrement: 0
   m_basicSpeedIncrement: 0.15
   m_extraMediumWaveFrequency: 1
-  m_mediumPhantomAmount: 4
+  m_mediumPhantomAmount: 8
   m_mediumHealthIncrement: 0
   m_mediumSpeedIncrement: 0.15
   m_extraHardWaveFrequency: 1
