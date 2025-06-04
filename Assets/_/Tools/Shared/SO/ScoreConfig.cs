@@ -8,7 +8,10 @@ namespace Tools
 
         public float m_scoreValue;
         public int m_currentWave;
-
+        public float m_scoreTresholdForHealing;
+        public float m_healingPercentage;
+        public float m_scoreTresholdForDamage;
+        
 
         public void SaveWaves(int waveCount)
         {
@@ -17,8 +20,13 @@ namespace Tools
         public void AddScore(float scoreValue)
         {
             m_scoreValue += scoreValue;
+            
         }
 
+        public void HealPlayer()
+        {
+            
+        }
         public void ResetScore()
         {
             m_scoreValue = 0;
