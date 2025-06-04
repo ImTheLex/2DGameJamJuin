@@ -1,0 +1,46 @@
+players.png
+size:2048,512
+filter:Linear,Linear
+pma:true
+Calque 13 copie
+bounds:602,109,236,347
+offsets:2,2,240,351
+arm/arm_left
+bounds:1794,342,106,114
+offsets:2,2,110,118
+arm/arm_left copie
+bounds:1902,353,108,103
+offsets:2,3,112,108
+bag
+bounds:1078,244,253,212
+offsets:2,2,257,216
+body
+bounds:2,94,298,362
+offsets:2,2,302,366
+glasses
+bounds:2,2,311,90
+offsets:2,2,315,94
+leg/leg_left
+bounds:1588,265,101,191
+offsets:2,2,105,195
+leg/leg_right
+bounds:1588,265,101,191
+offsets:2,2,105,195
+player/Calque 13 copie
+bounds:840,109,236,347
+offsets:2,2,240,351
+player/bag
+bounds:1333,244,253,212
+offsets:2,2,257,216
+player/body
+bounds:302,94,298,362
+offsets:2,2,302,366
+player/glasses
+bounds:1078,152,311,90
+offsets:2,2,315,94
+player/leg/leg_left
+bounds:1691,265,101,191
+offsets:2,2,105,195
+player/leg/leg_right
+bounds:1691,265,101,191
+offsets:2,2,105,195
