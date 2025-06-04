@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: LampConfig
   m_EditorClassIdentifier: 
   m_damage: 1
+  m_lenght: 3
+  m_width: 4
