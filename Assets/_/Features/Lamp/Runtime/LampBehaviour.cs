@@ -26,6 +26,7 @@ public class LampBehaviour : MonoBehaviour
         _currentLenght = _lampConfig.m_lenght;
         _currentWidth = _lampConfig.m_width;
         transform.localScale = new Vector3(_currentWidth,_currentLenght, 0);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -51,6 +52,7 @@ public class LampBehaviour : MonoBehaviour
             float amount = (_configDamage / 100) * m_scoreConfig.m_damagePercentage;
             
               _currentDamage += amount;
+
         }
     }
 
@@ -58,10 +60,12 @@ public class LampBehaviour : MonoBehaviour
     {
         if (m_scoreConfig.m_scoreValue >= _scoreTresholdForLenght)
         {
-            _scoreTresholdForDamage += m_scoreConfig.m_scoreTresholdForLenght;
+            _scoreTresholdForLenght += m_scoreConfig.m_scoreTresholdForLenght;
             float amount = (_currentLenght / 100) * m_scoreConfig.m_lengtPercentage;
             
             _currentLenght += amount;
+            transform.localScale = new Vector3(_currentWidth,_currentLenght, 0);
+
         }
     }
     
@@ -69,10 +73,12 @@ public class LampBehaviour : MonoBehaviour
     {
         if (m_scoreConfig.m_scoreValue >= _scoreTresholdForWidth)
         {
-            _scoreTresholdForDamage += m_scoreConfig.m_scoreTresholdForWidth;
+            _scoreTresholdForWidth += m_scoreConfig.m_scoreTresholdForWidth;
             float amount = (_currentLenght / 100) * m_scoreConfig.m_widthPercentage;
             
             _currentWidth += amount;
+            transform.localScale = new Vector3(_currentWidth,_currentLenght, 0);
+
         }
     }
     private void OnTriggerStay2D(Collider2D other)

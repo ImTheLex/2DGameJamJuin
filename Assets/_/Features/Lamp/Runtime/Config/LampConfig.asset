@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_damage: 1
   m_lenght: 3
-  m_width: 4
+  m_width: 0.5

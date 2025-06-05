@@ -80,13 +80,14 @@ PolygonCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   m_Points:
     m_Paths:
-    - - {x: -0.5, y: 0.5}
-      - {x: -0.5, y: -0.5}
-      - {x: 0.5, y: -0.5}
-      - {x: 0.5, y: 0.5}
+    - - {x: -0.07492757, y: 7.3201356}
+      - {x: -3.8317785, y: 4.590624}
+      - {x: -2.3967888, y: 0.17418051}
+      - {x: 2.2469344, y: 0.17418098}
+      - {x: 3.6819232, y: 4.5906243}
   m_UseDelaunayMesh: 0
 --- !u!114 &3022753990931027238
 MonoBehaviour:
@@ -153,7 +154,7 @@ Animator:
   m_GameObject: {fileID: 7266898255389450573}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 492aba5647c059a4b9ed19438582aac4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

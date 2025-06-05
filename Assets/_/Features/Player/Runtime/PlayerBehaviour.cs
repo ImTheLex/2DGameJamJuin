@@ -57,7 +57,7 @@ namespace Player.Runtime
             m_health -= damage;
             if (m_health <= 0)
             {
-                Debug.Log("Game Over");
+                //Debug.Log("Game Over");
                 gameObject.SetActive(false);
                 Time.timeScale = 0;
                 SceneManager.LoadScene("Scoring_scene");
