@@ -10,30 +10,31 @@ using Random = UnityEngine.Random;
 public class SpawnerSystem : MonoBehaviour
 {
 
-    [Header("References")] 
-    public Transform m_player;
-    public ScoreBehaviour m_scoreBehaviour;
-    public List<GameObject> m_prefabs;
-    public List<Transform> m_spawnPoints;
-    
-    
-    [Header("Wave Settings"), SerializeField] 
-    public List<WaveConfig> m_waveConfigs;
-    public int m_maxUnitsPool;
+    #region Variables
 
-    [Header("Debug")] 
-    public List<GameObject> m_phantomPool;
-    public List<PhantomBehaviour> m_livingPhantoms;
-    public List<PhantomBehaviour.PhantomType> phantomTypesToSpawn = new List<PhantomBehaviour.PhantomType>();
-    public WaveConfig m_currentWaveConfig;
-    public int m_currentWave;
-    public float m_spawnInterval;
-    private bool m_isSpawning;
+        [Header("References")] 
+        public Transform m_player;
+        public ScoreBehaviour m_scoreBehaviour;
+        public List<GameObject> m_prefabs;
+        public List<Transform> m_spawnPoints;
+        
+        [Header("Wave Settings"), SerializeField] 
+        public List<WaveConfig> m_waveConfigs;
+        public int m_maxUnitsPool;
 
+        [Header("Debug")] 
+        public List<GameObject> m_phantomPool;
+        public List<PhantomBehaviour> m_livingPhantoms;
+        public List<PhantomBehaviour.PhantomType> phantomTypesToSpawn = new List<PhantomBehaviour.PhantomType>();
+        public WaveConfig m_currentWaveConfig;
+        public int m_currentWave;
+        public float m_spawnInterval;
+        private bool m_isSpawning;
+
+    #endregion
 
     private void Awake()
     {
-        //m_currentWaveConfig = GetWaveConfigForWave(m_currentWave);
         InitializeSpawns();
     }
 
@@ -87,6 +88,7 @@ public class SpawnerSystem : MonoBehaviour
 
     }
 
+    //InitializeAround()
     private void Start()
     {
         StartCoroutine(SetPhantomActive());

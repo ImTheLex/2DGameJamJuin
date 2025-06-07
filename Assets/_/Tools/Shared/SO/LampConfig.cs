@@ -6,6 +6,8 @@ namespace Tools
     public class LampConfig : ScriptableObject
     {
 
-        public int m_damage;
+        public float m_damage;
+        public float m_lenght;
+        public float m_width;
     }
 }

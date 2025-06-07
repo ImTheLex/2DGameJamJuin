@@ -85,7 +85,7 @@ namespace Player.Runtime
             
             // Ajuster l'angle selon l'orientation de votre sprite
             // Si votre sprite "regarde" vers le haut par défaut, soustrayez 90°
-            angle -= 90f;
+            angle -= 270f;
             
             // Appliquer la rotation
             transform.rotation = Quaternion.Euler(0, 0, angle);

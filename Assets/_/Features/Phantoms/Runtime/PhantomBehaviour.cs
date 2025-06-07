@@ -160,7 +160,7 @@ public class PhantomBehaviour : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         m_health -= damage;
         if (m_health <= 0)
