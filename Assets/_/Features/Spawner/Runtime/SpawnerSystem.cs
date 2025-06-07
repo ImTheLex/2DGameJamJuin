@@ -77,6 +77,8 @@ public class SpawnerSystem : MonoBehaviour
                 new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y), Quaternion.identity,
                 transform);
             var _pb = go.GetComponent<PhantomBehaviour>();
+            //var healthBar = go.GetComponentInChildren<HealthBarBehaviour>();
+            //healthBar.SetTarget(go);
             _pb.m_player = m_player;
             _pb.m_livingPhantoms = m_livingPhantoms;
             _pb.m_scoreBehaviour = m_scoreBehaviour;
