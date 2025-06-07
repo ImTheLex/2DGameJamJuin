@@ -2,8 +2,8 @@
     "name": "HealthBar.Runtime",
     "rootNamespace": "",
     "references": [
-        "GUID:461d4f6207f5ccf49bb87cb72bac191e",
-        "GUID:32832dadf1eb2ca44aefbe43f701ef83"
+        "GUID:32832dadf1eb2ca44aefbe43f701ef83",
+        "GUID:864f9f698dda5ab458ce796818db4d2d"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

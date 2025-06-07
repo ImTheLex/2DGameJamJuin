@@ -7,9 +7,13 @@ using Debug = UnityEngine.Debug;
 public class LampBehaviour : MonoBehaviour
 {
     [Header("References")]
-    private PhantomBehaviour _phantomBehaviour;
-    public LampConfig _lampConfig;
+    //private PhantomBehaviour _phantomBehaviour;
+    [SerializeField]
+    private LampConfig m_lampConfig;
+    [SerializeField]
     public ScoreConfig m_scoreConfig;
+    
+    
     private float _currentDamage;
     private float _configDamage;
     private float _currentLenght;
@@ -21,28 +25,38 @@ public class LampBehaviour : MonoBehaviour
 
     private void Awake()
     {
-        _configDamage = _lampConfig.m_damage;
+        _configDamage = m_lampConfig.m_damage;
         _currentDamage = _configDamage;
-        _currentLenght = _lampConfig.m_lenght;
-        _currentWidth = _lampConfig.m_width;
+        _currentLenght = m_lampConfig.m_lenght;
+        _currentWidth = m_lampConfig.m_width;
         transform.localScale = new Vector3(_currentWidth,_currentLenght, 0);
         
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (_phantomBehaviour == null)
-        {
-            _phantomBehaviour = other.GetComponent<PhantomBehaviour>();
-        }
-    }
-
     private void Update()
     {
         IncreaseDamage();
         IncreaseRange();
         IncreaseWidth();
     }
+
+    /*private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (_phantomBehaviour == null)
+        {
+            _phantomBehaviour = other.GetComponent<PhantomBehaviour>();
+        }
+    }
+    */
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        Debug.Log("Other " + other.name + "Damage: " + m_lampConfig.m_damage);
+        //_phantomBehaviour.TakeDamage(_lampConfig.m_damage);
+        
+        var bh = other.GetComponent<PhantomBehaviour>();
+        bh.TakeDamage(_currentDamage);
+    }
+
+    
 
     private void IncreaseDamage()
     {
@@ -81,14 +95,6 @@ public class LampBehaviour : MonoBehaviour
 
         }
     }
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        Debug.Log("Other " + other.name + "Damage: " + _lampConfig.m_damage);
-        
-        //_phantomBehaviour.TakeDamage(_lampConfig.m_damage);
-        
-        var bh = other.GetComponent<PhantomBehaviour>();
-        bh.TakeDamage(_currentDamage);
-    }
+    
    
 }

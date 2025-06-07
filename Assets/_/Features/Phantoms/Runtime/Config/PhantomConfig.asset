@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da35d75ad0d5ed645b87321fa06939ca, type: 3}
   m_Name: PhantomConfig
   m_EditorClassIdentifier: 
-  m_basicHealth: 5
+  m_basicHealth: 10
   m_basicSpeed: 1.5
   m_basicSpeedModifier: 1
   m_basicDamage: 5
@@ -32,3 +32,4 @@ MonoBehaviour:
   m_bossSpeedModifier: 1
   m_bossPhantomDamage: 10
   m_bossScoreValueOnDeath: 20
+  m_maxHealth: 0

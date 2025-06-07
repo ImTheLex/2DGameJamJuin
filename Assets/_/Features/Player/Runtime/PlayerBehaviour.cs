@@ -1,17 +1,21 @@
 using System;
+using Interface;
 using Tools;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Player.Runtime
 {
-    public class PlayerBehaviour : MonoBehaviour
+    public class PlayerBehaviour : MonoBehaviour, IHasHealth
     {
        [HideInInspector]
         public float m_health;
         public PlayerConfig m_playerConfig;
         public ScoreConfig m_scoreConfig;
         private float _scoreTresholdForHealing;
+        
+        public float CurrentHealth => m_health; 
+        public float MaxHealth => m_playerConfig.m_maxHealth;
         
         private void Awake()
         {
@@ -62,6 +66,11 @@ namespace Player.Runtime
                 Time.timeScale = 0;
                 SceneManager.LoadScene("Scoring_scene");
             }
+        }
+
+        public MonoBehaviour GetGameObjectWithHealth()
+        {
+            return this;
         }
     }
 }

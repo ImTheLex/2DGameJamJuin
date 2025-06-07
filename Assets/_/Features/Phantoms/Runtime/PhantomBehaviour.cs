@@ -1,15 +1,17 @@
 using System;
 using System.Collections.Generic;
+using Interface;
 using Spine.Unity;
 using Tools;
 using UnityEngine;
 
-public class PhantomBehaviour : MonoBehaviour
+public class PhantomBehaviour : MonoBehaviour, IHasHealth
 {
-
+    
     public enum PhantomType { Easy, Medium, Hard, Boss}
     
     public float m_health;
+    public float m_maxHealth;
     public float m_scoreValueOnDeath;
     public int m_phantomDamage;
     
@@ -49,7 +51,6 @@ public class PhantomBehaviour : MonoBehaviour
     public ScoreBehaviour m_scoreBehaviour;
     public WaveConfig m_waveConfig;
     private float m_speed;
-
     
     public enum MovementType
     {
@@ -63,7 +64,6 @@ public class PhantomBehaviour : MonoBehaviour
         _phantomRb = GetComponent<Rigidbody2D>();
         //_spriteRenderer = GetComponent<SpriteRenderer>();
         _skeletonAnimation = GetComponent<SkeletonMecanim>();
-        
     }
 
     void Start()
@@ -74,7 +74,7 @@ public class PhantomBehaviour : MonoBehaviour
 
     public void Configure(PhantomType type)
     {
-        Debug.Log($"[CONFIGURE] Phantom Type: {type}, WaveConfig Null? {m_waveConfig == null}");
+        //Debug.Log($"[CONFIGURE] Phantom Type: {type}, WaveConfig Null? {m_waveConfig == null}");
         m_type = type;
         switch (type)
         {
@@ -114,6 +114,7 @@ public class PhantomBehaviour : MonoBehaviour
 
                 break;
         }
+        m_maxHealth = m_health;
     }
 
     
@@ -228,4 +229,12 @@ public class PhantomBehaviour : MonoBehaviour
            gameObject.SetActive(false);
         }
     }
+
+    public MonoBehaviour GetGameObjectWithHealth()
+    {
+        return this;
+    }
+
+    public float CurrentHealth => m_health;
+    public float MaxHealth => m_maxHealth;
 }

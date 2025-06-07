@@ -32,6 +32,8 @@ namespace Tools
         public float m_bossSpeedModifier;
         public int m_bossPhantomDamage;
         public float m_bossScoreValueOnDeath = 5;
-
+        
+        [HideInInspector]
+        public float m_maxHealth;
     }
 }

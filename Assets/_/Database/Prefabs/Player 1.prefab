@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6307e0ebafed08b4cb98006287b1f711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lampConfig: {fileID: 11400000, guid: a730dedb65fae1e4295fe674bc868585, type: 2}
+  m_lampConfig: {fileID: 11400000, guid: a730dedb65fae1e4295fe674bc868585, type: 2}
   m_scoreConfig: {fileID: 11400000, guid: 669248cfc3afe6e469366fc5e8ef1d32, type: 2}
 --- !u!60 &985778304184368242
 PolygonCollider2D:
@@ -394,6 +394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93aa54edcba95cd4e81c32a300b2067d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_forwardAxis: 0
+  m_initialRotationAngle: 270
   rotationSpeed: 0
   smoothRotation: 0
   followMouse: 1
