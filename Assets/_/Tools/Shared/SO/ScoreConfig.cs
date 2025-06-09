@@ -22,6 +22,10 @@ namespace Tools
         public float m_lengtPercentage;
         public float m_scoreTresholdForWidth;
         public float m_widthPercentage;
+        
+        [Header("Lamp Ultimate")]
+        public float m_scoreTresholdForUltimate;
+        
 
 
         public void SaveWaves(int waveCount)

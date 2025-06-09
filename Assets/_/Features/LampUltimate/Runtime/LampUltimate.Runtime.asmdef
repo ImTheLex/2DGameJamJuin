@@ -1,10 +1,8 @@
 {
-    "name": "Lamp.Runtime",
-    "rootNamespace": "Lamp.Runtime",
+    "name": "LampUltimate.Runtime",
+    "rootNamespace": "",
     "references": [
-        "GUID:32832dadf1eb2ca44aefbe43f701ef83",
-        "GUID:6ef25569c48e7be46a3b0604cefeeca1",
-        "GUID:6b13514937a2bef41b7b71e7bb50ba41"
+        "GUID:32832dadf1eb2ca44aefbe43f701ef83"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
