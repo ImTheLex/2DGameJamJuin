@@ -1,7 +1,8 @@
 using System;
+using Tools;
 using UnityEngine;
 
-namespace Player.Runtime
+namespace Lamp.Runtime
 {
     public class LookAtTarget : MonoBehaviour
     {
@@ -10,7 +11,7 @@ namespace Player.Runtime
             Up,
             Forward
         }
-
+        
         [Header("Orientation Settings")] 
         public LocalForwardAxis m_forwardAxis = LocalForwardAxis.Up;
         
@@ -23,6 +24,7 @@ namespace Player.Runtime
         [Header("Optional Settings")] public bool smoothRotation = true;
         public bool followMouse = true;
 
+        [Header("Ultimate Settings")] public SpecialMoveDetector m_detector;
         [Header("Debug")] public Vector2 targetPosition;
 
         private Vector2 _currentDirection;
@@ -65,6 +67,8 @@ namespace Player.Runtime
                     // Rotation instantanée
                     InstantRotateTowards(targetDirection);
                 }
+                m_detector.m_direction = _currentDirection;
+
             }
             
         #endregion
