@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Interface;
 using Spine.Unity;
@@ -61,6 +62,7 @@ public class PhantomBehaviour : MonoBehaviour, IHasHealth
     }
     private void Awake()
     {
+        _audio = GetComponent<AudioSource>();
         _phantomRb = GetComponent<Rigidbody2D>();
         //_spriteRenderer = GetComponent<SpriteRenderer>();
         _skeletonAnimation = GetComponent<SkeletonMecanim>();
@@ -70,7 +72,11 @@ public class PhantomBehaviour : MonoBehaviour, IHasHealth
     {
         //m_health = m_phantomConfig.m_health;
     }
-    
+
+    private void OnEnable()
+    {
+        _isDying = false;
+    }
 
     public void Configure(PhantomType type)
     {
@@ -163,15 +169,30 @@ public class PhantomBehaviour : MonoBehaviour, IHasHealth
 
     public void TakeDamage(float damage)
     {
+        if (_isDying) return;
+        
         m_health -= damage;
         if (m_health <= 0)
         {
-            gameObject.SetActive(false);
-            m_scoreBehaviour.m_scoreConfig.AddScore(m_scoreValueOnDeath);
-
+            _isDying = true;
+            transform.position = Vector3.zero;
+            StartCoroutine(HandleDeath());
         }
     }
 
+    
+    
+    private IEnumerator HandleDeath()
+    {
+        _audio.PlayOneShot(_audioClip);
+
+        // Attendre la durée du clip avant de désactiver
+        yield return new WaitForSeconds(_audioClip.length);
+
+        gameObject.SetActive(false);
+        m_scoreBehaviour.m_scoreConfig.AddScore(m_scoreValueOnDeath);
+    }
+    
     private void MoveWithVelocity(Vector2 direction)
     {
         // Contrôle direct de la vélocité
@@ -237,4 +258,7 @@ public class PhantomBehaviour : MonoBehaviour, IHasHealth
 
     public float CurrentHealth => m_health;
     public float MaxHealth => m_maxHealth;
+    private AudioSource _audio;
+    private bool _isDying;
+    [SerializeField] private AudioClip _audioClip;
 }

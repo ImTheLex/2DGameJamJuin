@@ -17,7 +17,7 @@ public class ScoreBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _text.SetText($"Current Wave: {m_scoreConfig.m_currentWave+1} <br>Score: {m_scoreConfig.m_scoreValue}");
+        _text.SetText($"Current Wave: {m_scoreConfig.m_currentWave} <br>Score: {m_scoreConfig.m_scoreValue}");
     }
 
 }
