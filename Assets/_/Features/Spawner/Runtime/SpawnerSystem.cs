@@ -101,8 +101,8 @@ public class SpawnerSystem : MonoBehaviour
         if (!m_isSpawning && m_livingPhantoms.Count == 0)
         {
             m_isSpawning = true;
-            m_scoreBehaviour.m_scoreConfig.SaveWaves(m_currentWave);
             m_currentWave++;    
+            m_scoreBehaviour.m_scoreConfig.SaveWaves(m_currentWave);
             PrepareWave();
             StartCoroutine(SetPhantomActive());
         }

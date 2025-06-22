@@ -72,5 +72,10 @@ namespace Player.Runtime
         {
             return this;
         }
+
+        public void InitializePlayer()
+        {
+            var pd = GetComponent<PlayerData>();
+        }
     }
 }
