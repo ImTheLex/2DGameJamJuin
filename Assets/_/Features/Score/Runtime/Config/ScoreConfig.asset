@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_scoreValue: 0
   m_currentWave: 0
-  m_scoreTresholdForHealing: 100
-  m_healingPercentage: 20
-  m_scoreTresholdForDamage: 15
+  m_scoreTresholdForHealing: 25
+  m_healingPercentage: 8
+  m_scoreTresholdForDamage: 12
   m_damagePercentage: 1
-  m_scoreTresholdForLenght: 20
+  m_scoreTresholdForLenght: 14
   m_lengtPercentage: 1
   m_scoreTresholdForWidth: 40
   m_widthPercentage: 1

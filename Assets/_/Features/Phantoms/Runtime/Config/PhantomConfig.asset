@@ -15,12 +15,12 @@ MonoBehaviour:
   m_basicHealth: 10
   m_basicSpeed: 1.5
   m_basicSpeedModifier: 1
-  m_basicDamage: 5
+  m_basicDamage: 3
   m_basicScoreValueOnDeath: 1
   m_mediumHealth: 10
   m_mediumSpeed: 2.5
   m_mediumSpeedModifier: 1
-  m_mediumPhantomDamage: 5
+  m_mediumPhantomDamage: 3
   m_mediumScoreValueOnDeath: 2
   m_hardHealth: 20
   m_hardSpeed: 2
