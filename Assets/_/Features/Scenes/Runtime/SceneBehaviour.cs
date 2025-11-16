@@ -1,25 +1,26 @@
 using Tools;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneBehaviour : MonoBehaviour
+namespace _Features.Scene.Runtime
 {
-    private Scene _previousScene;
-    [SerializeField]
-    private ScoreConfig m_scoreConfig;
+    public class SceneBehaviour : MonoBehaviour
+    {
+    
+    
+    [SerializeField] private ScoreConfig m_scoreConfig;
     public void StartGame()
     {
         Time.timeScale = 1;
-        _previousScene = SceneManager.GetActiveScene();
         m_scoreConfig.ResetScore();
-        SceneManager.LoadScene("Maingame_scene");
+        SceneManager.LoadScene(_mainGameScene);
         
     }
 
     public void ShowScore()
     {
-        _previousScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene("Scoring_scene");
+        SceneManager.LoadScene(_scoringScene);
     }
 
     public void QuitGame()
@@ -30,7 +31,16 @@ public class SceneBehaviour : MonoBehaviour
 
     public void Return()
     {
-        //SceneManager.LoadScene(_previousScene.buildIndex);
-        SceneManager.LoadScene("mainmenu_scene");
+        SceneManager.LoadScene(_mainMenuScene);
     }
+    
+    #region Privates
+
+        [SerializeField] private string _mainMenuScene;
+        [SerializeField] private string _mainGameScene;
+        [SerializeField] private string _scoringScene;
+
+    #endregion
+    }
+  
 }

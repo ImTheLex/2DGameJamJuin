@@ -1,6 +1,6 @@
-using System;
 using Interface;
 using Tools;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,12 +8,13 @@ namespace Player.Runtime
 {
     public class PlayerBehaviour : MonoBehaviour, IHasHealth
     {
+        
        [HideInInspector]
         public float m_health;
         public PlayerConfig m_playerConfig;
         public ScoreConfig m_scoreConfig;
         private float _scoreTresholdForHealing;
-        
+        [SerializeField] private string _ScoreScene;
         public float CurrentHealth => m_health; 
         public float MaxHealth => m_playerConfig.m_maxHealth;
         
@@ -64,7 +65,7 @@ namespace Player.Runtime
                 //Debug.Log("Game Over");
                 gameObject.SetActive(false);
                 Time.timeScale = 0;
-                SceneManager.LoadScene("Scoring_scene");
+                SceneManager.LoadScene(_ScoreScene);
             }
         }
 

@@ -53,6 +53,7 @@ MonoBehaviour:
   m_health: 10000
   m_playerConfig: {fileID: 11400000, guid: f5fb1fd651735094f9f1332d5ba15a06, type: 2}
   m_scoreConfig: {fileID: 11400000, guid: 669248cfc3afe6e469366fc5e8ef1d32, type: 2}
+  _ScoreScene: 02_ScoringMenu
 --- !u!95 &-5173619433390979078
 Animator:
   serializedVersion: 7
